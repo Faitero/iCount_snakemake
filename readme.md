@@ -1,6 +1,7 @@
 # iCount snakemake pipeline
 
 ##Authors 
+
 Igor Ruiz de los Mozos, Charlotte Capitanchik, .... Tomaz Curk
 Last updated: Sep 2019
 
