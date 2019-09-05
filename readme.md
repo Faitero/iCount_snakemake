@@ -45,7 +45,7 @@ snakemake --unlock -k -p --snakefile hnRNPC_snakefile.smk
 
 ## Output directories stile
 
-![Results directories]("tree output.png")
+![Results directories](tree_output.png)
 
 ## Pipeline schema
 
