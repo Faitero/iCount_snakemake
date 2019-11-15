@@ -587,7 +587,7 @@ def get_genome(wildcards):
     return ("{0}".format(samples.loc[wildcards.barcode, "mapto"]))
 
 
-rule bedgraph2:
+rule bedgraphUCSC:
     input:
         xlsites="{project}/xlsites/{barcode}/{barcode}.unique.xl.bed",
     output:

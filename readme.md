@@ -1,9 +1,9 @@
 # iCount snakemake pipeline
 
-##Authors 
+## Authors 
 
 Igor Ruiz de los Mozos, Charlotte Capitanchik, .... Tomaz Curk
-Last updated: Sep 2019
+Last updated: Nov 2019
 
 
 ## Installation
@@ -24,33 +24,38 @@ iCount
 
 ## run locally
 To run locally use command:
-```snakemake -k -p --snakefile hnRNPC_snakefile.smk --use-conda ```
+```
+snakemake -k -p --cores 4 --snakefile iCount_snakefile.smk --use-conda
+```
 
 ## Run in SLURM
 
 To run in a cluster use command:
 ```
-sbatch -J iCount_main -o iCount_%A.out -N 1 -t 3-00:00:00 --wrap="snakemake -k -p --snakefile hnRNPC_snakefile.smk --jobs 99 --use-conda --cluster-config cluster_slurmn.yaml --cluster 'sbatch -J {cluster.name} -N {cluster.n} -c {cluster.c} --mem={cluster.memory} -t {cluster.time} -o {cluster.output} -e {cluster.error}'"
+sbatch -J iCount_main -o iCount_%A.out -N 1 -t 3-00:00:00 --wrap="snakemake -k -p --snakefile iCount_snakefile.smk --jobs 99 --use-conda --cluster-config envs/cluster_slurmn.yaml --cluster 'sbatch -J {cluster.name} -N {cluster.n} -c {cluster.c} --mem={cluster.memory} -t {cluster.time} -o {cluster.output} -e {cluster.error}'"
 ```
 
 Dry run
 ```
-snakemake -k -p -n -r --snakefile hnRNPC_snakefile.smk --use-conda
+snakemake -k -p -n -r --snakefile iCount_snakefile.smk.smk --use-conda
 ```
 Unlock directory
 ```
-snakemake --unlock -k -p --snakefile hnRNPC_snakefile.smk
+snakemake --unlock -k -p --snakefile iCount_snakefile.smk.smk
 ```
 
 ## Run in SGE
+```
+Todo
+```
 
 ## Output directories stile
 
-![Results directories](tree_output.PNG)
+![Results directories](data/tree_output.PNG)
 
 ## Pipeline schema
 
-![Pipeline schem](dag.png)
+![Pipeline schem](data/workflow.png)
 
 ## Testing
 
